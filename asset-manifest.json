@@ -1,0 +1,85 @@
+{
+  "version": "github-pages-20261119-1",
+  "assets": [
+    {
+      "url": "icon-192.png",
+      "sha256": "e96784f92b2fbc8661ffbfd502d373c198deeb1976eb7b7c36292b62ad04a020"
+    },
+    {
+      "url": "icon.svg",
+      "sha256": "87b0c662358e19528109d3eecc645b278141e5aa4c928bc980bd0ff4f6bc2235"
+    },
+    {
+      "url": "index.html",
+      "sha256": "e69a24c88a8b214838d59ae1c427c81cf47ba1643f32f1c060fe195a3080b0df"
+    },
+    {
+      "url": "manifest.webmanifest",
+      "sha256": "e638deb025abfaf64840f75f9b5e0ac61426907a947d3c211a253a77cf502d68"
+    },
+    {
+      "url": "reader/contracts.json",
+      "sha256": "ca9de12a18eb8eac1222404dcb823c6ed4c98485a78f247856560f4c3335a542"
+    },
+    {
+      "url": "reader/frog_eyes_aeronaut_symbol.png",
+      "sha256": "dd3c79ad7719fa0eb850ef7b2cb7a70e346d645002ff95c91259f182a6f7fac4"
+    },
+    {
+      "url": "reader/frog_eyes_gear_info_title.png",
+      "sha256": "d00ca4d4a2308260f0f2603358c6fe5ac076b8d1088a8dc41ec9f93cd6b90c72"
+    },
+    {
+      "url": "reader/frog_eyes_guard_symbol.png",
+      "sha256": "83285a8a1acbcf2abf8eb6b71dae423b6ceb6867eec145e88986a91d612842bc"
+    },
+    {
+      "url": "reader/frog_eyes_gunner_symbol.png",
+      "sha256": "77c5ce000dd445b334c29f6cec2bd861aa8b926b916e6300e01c3e4eaf446724"
+    },
+    {
+      "url": "reader/frog_eyes_mariner_symbol.png",
+      "sha256": "6e7f1a36bcf295eda2c3270e5a01c8c19a86059f05b7cc9caf90178d9b55cafe"
+    },
+    {
+      "url": "reader/frog_eyes_marksman_symbol.png",
+      "sha256": "f32ca344978c61d03202e23a3328302599d5a42d767de61bc88745a8c8dd55f4"
+    },
+    {
+      "url": "vendor/eng.traineddata",
+      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+    },
+    {
+      "url": "vendor/tesseract-core-lstm.wasm",
+      "sha256": "5db58ea4d1bd4256be81e8ae3b4fa226c4625dfba1850b1b3308dbf3700e9929"
+    },
+    {
+      "url": "vendor/tesseract-core-lstm.wasm.js",
+      "sha256": "8f04aa0cc81e7bde33f80e92fa01a7a665f0b4884d098acf5de9c7104a11dfaa"
+    },
+    {
+      "url": "vendor/tesseract.js-core-LICENSE",
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "url": "vendor/tesseract.js-LICENSE.md",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "url": "vendor/tesseract.js-tesseract.min.js.LICENSE.txt",
+      "sha256": "cdf963ced7d25a0f98901a547647b4d6e2dbe0197fd78c87a059a87b0e542fe2"
+    },
+    {
+      "url": "vendor/tesseract.js-worker.min.js.LICENSE.txt",
+      "sha256": "45f54171aeaa1d10c0c1a66f374b7bba1f02472b1487fbe892eec04f840002ac"
+    },
+    {
+      "url": "vendor/tesseract.min.js",
+      "sha256": "a8e29918d098b2b06e1012bdaeffb4aec0445c5d5654709023e0bd1f442a80e8"
+    },
+    {
+      "url": "vendor/worker.min.js",
+      "sha256": "aca1229639fc9907d86f96e825955a2b7c5716d17f3bc3acd71f9c7ab66181fc"
+    }
+  ]
+}
