@@ -1,0 +1,203 @@
+{
+  "stats": {
+    "prompt": "Read a Tiles Survive HERO STATS screenshot, never a Skills or Gear page. The image contains five labeled enlarged crops from ONE source: NAME, FACTION AND CLASS, RARITY, FIVE STARS ONLY, LEVEL. Read each field ONLY from its labeled crop. The faction is the LEFT icon and class the RIGHT icon. Do not default to Aeronaut or Guard. If uncertain return null. The star strip excludes the emblem; read all five actual star centers, not the labels. Return JSON only. Read hero_name from the name printed at top; never infer it from appearance or the roster. Read X-SSR, SSR, SR or R from the large rarity letters. Beneath the name: faction badge light blue/cloud=Aeronaut, blue/wave=Mariner, yellow=Rover, green=Stalwart. Class symbol shield=Guard, pistol=Gunner, rifle=Marksman. Read level only beneath the word Level; ignore power, Escorts and March Capacity. Read exactly FIVE star positions from left to right, EXCLUDING the separate large hexagonal badge to their left. Each fully gold star=gold, fully purple=purple, dark empty=empty. Partly gold over purple=partial_gold; partly purple over empty=partial_purple. Use unknown when uncertain, never guess. Ignore floating toolbars and screenshot thumbnails. Use null for unreadable text or numbers. Do not use remembered hero stats.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "hero_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rarity": {
+          "enum": [
+            "X-SSR",
+            "SSR",
+            "SR",
+            "R",
+            null
+          ]
+        },
+        "faction": {
+          "enum": [
+            "Aeronaut",
+            "Mariner",
+            "Rover",
+            "Stalwart",
+            null
+          ]
+        },
+        "class": {
+          "enum": [
+            "Guard",
+            "Gunner",
+            "Marksman",
+            null
+          ]
+        },
+        "level": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "star_states": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "enum": [
+              "gold",
+              "purple",
+              "empty",
+              "partial_gold",
+              "partial_purple",
+              "unknown"
+            ]
+          }
+        }
+      },
+      "required": [
+        "hero_name",
+        "rarity",
+        "faction",
+        "class",
+        "level",
+        "star_states"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "skills": {
+    "prompt": "Read four labeled crops from ONE Tiles Survive hero Skills page. Return only hero_name, skill_1_level, skill_2_level, skill_3_level as JSON. Read the NAME printed in its crop; never infer identity from art. SKILL 1 is the original TOP LEFT icon, SKILL 2 TOP RIGHT, SKILL 3 BOTTOM LEFT. Read each current integer after Lv. independently from that crop. Never copy a value from another crop. Use null if obscured, locked or unreadable. Do not infer unlocked levels or maximum levels from hero identity. The fourth skill is intentionally absent. Stats, skill descriptions, maximum levels, book counts and costs are absent and must not be invented.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "hero_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "skill_1_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 99
+        },
+        "skill_2_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 99
+        },
+        "skill_3_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 99
+        }
+      },
+      "required": [
+        "hero_name",
+        "skill_1_level",
+        "skill_2_level",
+        "skill_3_level"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "gear": {
+    "prompt": "Read a Tiles Survive GEAR INFO screenshot. Read only the main gear header and Special Stats. Ignore hero portraits, base stats, level bonus stats, and other gear thumbnails. Never assign a hero. Do not count stars. Extract gear_name, gear_level and exactly three special_stats slots in display order, with name, percentage and text_color. A locked slot is name LOCKED with null percentage and text_color. Never guess; unreadable values are null. Return JSON only. For each special stat preserve the EXACT displayed signed number and unit in raw_value, including % or K/M. Set value_type to percentage only for a percent sign, flat for a plain number or K/M. Never drop K/M. percentage must be null for flat values. Return raw_value and value_type as null when unreadable or locked.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "gear_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gear_level": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "special_stats": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "percentage": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "text_color": {
+                "enum": [
+                  "orange",
+                  "purple",
+                  "blue",
+                  "dark blue",
+                  "light blue",
+                  "green",
+                  "gold",
+                  "yellow",
+                  "red",
+                  "gray",
+                  "white",
+                  "black",
+                  null
+                ]
+              },
+              "raw_value": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "value_type": {
+                "enum": [
+                  "percentage",
+                  "flat",
+                  null
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "percentage",
+              "text_color",
+              "raw_value",
+              "value_type"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "gear_name",
+        "gear_level",
+        "special_stats"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
